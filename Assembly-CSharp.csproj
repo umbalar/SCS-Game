@@ -9,7 +9,7 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{E11EFEC0-55C0-7686-8C05-28F44349A481}</ProjectGuid>
+    <ProjectGuid>{82A56E23-819A-C246-2B53-532FBA80B03C}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>Assembly-CSharp</AssemblyName>
@@ -56,8 +56,11 @@
     <Analyzer Include="C:\Program Files (x86)\Microsoft Visual Studio Tools for Unity\16.0\Analyzers\Microsoft.Unity.Analyzers.dll" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Grisha.cs" />
-    <Compile Include="Assets\Follower.cs" />
+    <Compile Include="Assets\Scripts\TileRedactor.cs" />
+    <Compile Include="Assets\Scripts\Grisha.cs" />
+    <Compile Include="Assets\Scripts\Follower.cs" />
+    <Compile Include="Assets\Scripts\BuildingPause.cs" />
+    <Compile Include="Assets\Scripts\MouseOverGUI.cs" />
   </ItemGroup>
   <ItemGroup>
      <None Include="Assets\BayatGames\Free Platform Game Assets\Readme.txt" />
