@@ -61,6 +61,7 @@
     <Compile Include="Assets\Scripts\Follower.cs" />
     <Compile Include="Assets\Scripts\BuildingPause.cs" />
     <Compile Include="Assets\Scripts\MouseOverGUI.cs" />
+    <Compile Include="Assets\Scripts\GroundCheck.cs" />
   </ItemGroup>
   <ItemGroup>
      <None Include="Assets\BayatGames\Free Platform Game Assets\Readme.txt" />

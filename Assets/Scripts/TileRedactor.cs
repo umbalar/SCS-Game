@@ -34,23 +34,23 @@ public class TileRedactor : MonoBehaviour
             {
                 tilemap.SetTile(clickCellPosition, tileToBuild);
                 tileToBuild = null;
-                buildingPause.Resume();
+                buildingPause.ChangePauseStatus();
             }
         }
         if (Input.GetKeyDown(KeyCode.Alpha1))
         {
             PickTile1();
-            buildingPause.Pause();
+            buildingPause.ChangePauseStatus();
         }
         if (Input.GetKeyDown(KeyCode.Alpha2))
         {
             PickTile2();
-            buildingPause.Pause();
+            buildingPause.ChangePauseStatus();
         }
         if (Input.GetKeyDown(KeyCode.Alpha3))
         {
             PickTile3();
-            buildingPause.Pause();
+            buildingPause.ChangePauseStatus();
         }
     }
     public void PickTile1()
