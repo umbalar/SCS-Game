@@ -10,16 +10,14 @@ public class TileRedactor : MonoBehaviour
     public TileBase tile2;
     public TileBase tile3;
     public TileBase tileToBuild;
-    private Tilemap tilemap;
+    [SerializeField] private GameObject tilemap;
+    private Tilemap tilemapComponent;
     private Camera mainCamera;
-    public GameObject buildingPauseOwner;
-    private BuildingPause buildingPause;
 
     void Start()
     {
-        tilemap = GetComponent<Tilemap>();
+        tilemapComponent = tilemap.GetComponent<Tilemap>();
         mainCamera = Camera.main;
-        buildingPause = buildingPauseOwner.GetComponent<BuildingPause>();
     }
 
     // Update is called once per frame
@@ -28,29 +26,30 @@ public class TileRedactor : MonoBehaviour
         if (Input.GetMouseButtonDown(0) && tileToBuild != null)
         {
             Vector3 clickWorldPosition = mainCamera.ScreenToWorldPoint(Input.mousePosition);
-            Vector3Int clickCellPosition = tilemap.WorldToCell(clickWorldPosition);
+            Vector3Int clickCellPosition = tilemapComponent.WorldToCell(clickWorldPosition);
             //Debug.Log(clickCellPosition);
-            if (BuildingPause.BuildPauseActive)
+            if (!tilemapComponent.HasTile(clickCellPosition))
             {
-                tilemap.SetTile(clickCellPosition, tileToBuild);
+                tilemapComponent.SetTile(clickCellPosition, tileToBuild);
                 tileToBuild = null;
-                buildingPause.ChangePauseStatus();
             }
+            else
+            {
+                Debug.Log("Tile already set");
+            }
+            
         }
         if (Input.GetKeyDown(KeyCode.Alpha1))
         {
             PickTile1();
-            buildingPause.ChangePauseStatus();
         }
         if (Input.GetKeyDown(KeyCode.Alpha2))
         {
             PickTile2();
-            buildingPause.ChangePauseStatus();
         }
         if (Input.GetKeyDown(KeyCode.Alpha3))
         {
             PickTile3();
-            buildingPause.ChangePauseStatus();
         }
     }
     public void PickTile1()

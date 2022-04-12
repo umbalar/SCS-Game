@@ -9,6 +9,7 @@ public class Grisha : MonoBehaviour
     [SerializeField] private float jumpForce = 10f;
     private Rigidbody2D rb;
     public bool isGrounded;
+    private Vector2 runDirection;
 
     private void Awake()
     {
@@ -17,26 +18,41 @@ public class Grisha : MonoBehaviour
 
     private void Run()
     {
-        Vector3 dir = transform.right * Input.GetAxis("Horizontal");
-        transform.position = Vector3.MoveTowards(transform.position, transform.position + dir, speed * Time.deltaTime);
-        //sprite.flipX = dir.x < 0.0f;
+        //Vector3 dir = transform.right * Input.GetAxis("Horizontal");
+        //transform.position = Vector3.MoveTowards(transform.position, transform.position + dir, speed * Time.deltaTime);
+
+        transform.Translate(runDirection.normalized * speed);
     }
 
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        runDirection.x = 1;
     }
 
-    // Update is called once per frame
-    void Update()
+    public void Jump()
     {
-        if (Input.GetKeyDown(KeyCode.Space) && isGrounded)
+        if (isGrounded)
         {
-            rb.AddForce(Vector2.up * jumpForce);
+            //Debug.Log(isGrounded);
+            if (rb.gravityScale > 0)
+            {
+                rb.AddForce(Vector2.up * jumpForce);
+            }
+            else
+            {
+                rb.AddForce(Vector2.down * jumpForce);
+            }
         }
-        if (Input.GetButton("Horizontal"))
+    } 
+
+    // Update is called once per frame
+    void FixedUpdate()
+    {
+        if (Input.GetKeyDown(KeyCode.Space))
         {
-            Run();
+            Jump();
         }
+        Run();
     }
 }
