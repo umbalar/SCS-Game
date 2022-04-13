@@ -4702,6 +4702,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 842848946}
     - target: {fileID: 2815230465493098138, guid: 373030340b185b946979ea564c11429e, type: 3}
+      propertyPath: waitTime
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2815230465493098138, guid: 373030340b185b946979ea564c11429e, type: 3}
       propertyPath: nextCameraLocation
       value: 
       objectReference: {fileID: 857731062}

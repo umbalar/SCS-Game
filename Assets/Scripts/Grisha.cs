@@ -9,6 +9,7 @@ public class Grisha : MonoBehaviour
     [SerializeField] private float jumpForce = 10f;
     private Rigidbody2D rb;
     public bool isGrounded;
+    public bool isRuning;
     private Vector2 runDirection;
 
     private void Awake()
@@ -20,14 +21,17 @@ public class Grisha : MonoBehaviour
     {
         //Vector3 dir = transform.right * Input.GetAxis("Horizontal");
         //transform.position = Vector3.MoveTowards(transform.position, transform.position + dir, speed * Time.deltaTime);
-
-        transform.Translate(runDirection.normalized * speed);
+        if (isRuning)
+        {
+            transform.Translate(runDirection.normalized * speed);
+        }
     }
 
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         runDirection.x = 1;
+        isRuning = true;
     }
 
     public void Jump()

@@ -11,6 +11,7 @@ public class Door : MonoBehaviour
     public float cameraRelocateSpeed;
     float cameraRelocatingProgress;
     bool cameraRelocating;
+    [SerializeField] float waitTime;
     void Start()
     {
         camera = Camera.main;
@@ -44,5 +45,14 @@ public class Door : MonoBehaviour
         Debug.Log("Door");
         //camera.transform.position = nextCameraLocation.transform.position;
         cameraRelocating = true;
+        StartCoroutine(Wait());
+    }
+
+    private IEnumerator Wait()
+    {
+        Debug.Log("Wait");  
+        grisha.isRuning = false;
+        yield return new WaitForSeconds(waitTime);
+        grisha.isRuning = true;
     }
 }
