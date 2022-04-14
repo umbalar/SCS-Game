@@ -25,6 +25,7 @@ public class GravitRreverse : MonoBehaviour
         grisha.transform.Rotate(grisha.transform.rotation.x + 180, 0, 0, Space.Self);
         //Debug.Log(grisha.GetComponent<Rigidbody2D>().gravityScale);
         grisha.GetComponent<Rigidbody2D>().gravityScale *= -1;
+        grisha.GetComponent<Grisha>().baseGravityScale *= -1;
         Debug.Log("Grav");
         Destroy(gameObject);
     }

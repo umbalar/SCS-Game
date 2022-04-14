@@ -60,13 +60,15 @@
     <Compile Include="Assets\Scripts\TileRedactor.cs" />
     <Compile Include="Assets\Scripts\LevelEnd.cs" />
     <Compile Include="Assets\Scripts\Grisha.cs" />
-    <Compile Include="Assets\Scripts\Follower.cs" />
+    <Compile Include="Assets\Scripts\Kill.cs" />
+    <Compile Include="Assets\Scripts\Trash\Follower.cs" />
     <Compile Include="Assets\Scripts\Trash\BuildingPause.cs" />
     <Compile Include="Assets\Scripts\GroundCheck.cs" />
     <Compile Include="Assets\Scripts\Door.cs" />
     <Compile Include="Assets\Scripts\GravitRreverse.cs" />
     <Compile Include="Assets\Scripts\MouseOverGUI.cs" />
-    <Compile Include="Assets\Scripts\Kill.cs" />
+    <Compile Include="Assets\Scripts\Climbing.cs" />
+    <Compile Include="Assets\Scripts\Brick.cs" />
   </ItemGroup>
   <ItemGroup>
      <None Include="Assets\BayatGames\Free Platform Game Assets\Readme.txt" />

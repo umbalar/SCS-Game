@@ -73,3 +73,4 @@ MonoBehaviour:
   grisha: {fileID: 0}
   nextCameraLocation: {fileID: 0}
   cameraRelocateSpeed: 0.02
+  waitTime: 3

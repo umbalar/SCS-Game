@@ -5,10 +5,13 @@ using UnityEngine;
 public class Kill : MonoBehaviour
 {
     GameObject character;
+    private Grid grid;
     void Start()
     {
         character = GameObject.FindGameObjectWithTag("Player");
         gameObject.GetComponent<Renderer>().enabled = false;
+        grid = GetComponentInParent<Grid>();
+        transform.position = grid.GetCellCenterWorld(grid.WorldToCell(transform.position));
     }
 
     // Update is called once per frame

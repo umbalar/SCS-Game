@@ -6,11 +6,15 @@ public class Grisha : MonoBehaviour
 {
     // Start is called before the first frame update
     [SerializeField] private float speed = 3f;
+    [SerializeField] private float ClimbingSpeed = 3f;
     [SerializeField] private float jumpForce = 10f;
     private Rigidbody2D rb;
     public bool isGrounded;
     public bool isRuning;
+    public int climbingTilesAtached;
+    private Vector2 climbingDirection;
     private Vector2 runDirection;
+    public float baseGravityScale;
 
     private void Awake()
     {
@@ -27,11 +31,27 @@ public class Grisha : MonoBehaviour
         }
     }
 
+    private void Climbing()
+    {
+        if (climbingTilesAtached > 0)
+        {
+            //rb.gravityScale = 0f;
+            transform.Translate(climbingDirection.normalized * ClimbingSpeed);
+        }
+        else
+        {
+            //rb.gravityScale = baseGravityScale;
+        }
+    }
+
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         runDirection.x = 1;
+        climbingDirection.y = 1;
         isRuning = true;
+        climbingTilesAtached = 0;
+        baseGravityScale = rb.gravityScale;
     }
 
     public void Jump()
@@ -58,5 +78,6 @@ public class Grisha : MonoBehaviour
             Jump();
         }
         Run();
+        Climbing();
     }
 }
