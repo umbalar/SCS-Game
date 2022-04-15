@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Tilemaps;
 
 public class Grisha : MonoBehaviour
 {
@@ -15,11 +16,6 @@ public class Grisha : MonoBehaviour
     private Vector2 climbingDirection;
     private Vector2 runDirection;
     public float baseGravityScale;
-
-    private void Awake()
-    {
-
-    }
 
     private void Run()
     {
@@ -73,11 +69,30 @@ public class Grisha : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            Jump();
-        }
+        //if (Input.GetKeyDown(KeyCode.Space))
+        //{
+        //    Jump();
+        //}
         Run();
         Climbing();
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        //Debug.Log(collision.gameObject.name);
+        if (collision.gameObject.tag == "JumpTrigger")
+        {
+            Debug.Log("Jump");
+            Jump();
+            Destroy(collision.gameObject);
+        }
+        else if (collision.gameObject.tag == "GravityReverseTrigger")
+        {
+            transform.Rotate(transform.rotation.x + 180, 0, 0, Space.Self);
+            GetComponent<Rigidbody2D>().gravityScale *= -1;
+            GetComponent<Grisha>().baseGravityScale *= -1;
+            Debug.Log("Grav");
+            Destroy(collision.gameObject);
+        }
     }
 }

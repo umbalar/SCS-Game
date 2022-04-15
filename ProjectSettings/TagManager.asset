@@ -5,7 +5,8 @@ TagManager:
   serializedVersion: 2
   tags:
   - TriggerTiles
-  - Brick
+  - JumpTrigger
+  - GravityReverseTrigger
   layers:
   - Default
   - TransparentFX

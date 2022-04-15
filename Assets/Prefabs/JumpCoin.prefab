@@ -11,10 +11,9 @@ GameObject:
   - component: {fileID: 5663822727357583997}
   - component: {fileID: 5663822727357583992}
   - component: {fileID: 5663822727357583999}
-  - component: {fileID: 5663822727357583998}
   m_Layer: 0
   m_Name: JumpCoin
-  m_TagString: Untagged
+  m_TagString: JumpTrigger
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -117,15 +116,3 @@ PolygonCollider2D:
       - {x: 0.48578268, y: -0.5928916}
       - {x: 0.61463416, y: -0.46128803}
       - {x: 0.5961844, y: 0.46911812}
---- !u!114 &5663822727357583998
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5663822727357583996}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 060cd495a141b704397917025aa8b4ca, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
