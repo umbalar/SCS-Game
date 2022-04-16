@@ -58,7 +58,6 @@
   <ItemGroup>
     <Compile Include="Assets\Scripts\Trash\TriggerChest.cs" />
     <Compile Include="Assets\Scripts\TileRedactor.cs" />
-    <Compile Include="Assets\Scripts\Climbing.cs" />
     <Compile Include="Assets\Scripts\LevelEnd.cs" />
     <Compile Include="Assets\Scripts\Grisha.cs" />
     <Compile Include="Assets\Scripts\Kill.cs" />
@@ -66,10 +65,10 @@
     <Compile Include="Assets\Scripts\Trash\BuildingPause.cs" />
     <Compile Include="Assets\Scripts\GroundCheck.cs" />
     <Compile Include="Assets\Scripts\Door.cs" />
+    <Compile Include="Assets\Scripts\TriggersStartPosition.cs" />
     <Compile Include="Assets\Scripts\Trash\GravitRreverse.cs" />
     <Compile Include="Assets\Scripts\MouseOverGUI.cs" />
     <Compile Include="Assets\Scripts\Trash\Brick.cs" />
-    <Compile Include="Assets\Scripts\TriggersStartPosition.cs" />
   </ItemGroup>
   <ItemGroup>
      <None Include="Assets\BayatGames\Free Platform Game Assets\Readme.txt" />
