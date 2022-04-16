@@ -2,12 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Tilemaps;
+using UnityEngine.SceneManagement;
 
 public class Grisha : MonoBehaviour
 {
     [SerializeField] private float speed = 3f;
     [SerializeField] private float ClimbingSpeed = 3f;
-    [SerializeField] private float jumpForce = 10f;
+    [SerializeField] private float baseJumpForce = 10f;
+    [SerializeField] private float strongJumpForce = 10f;
     [SerializeField] private float waitTime = 3f;
     private Rigidbody2D rb;
     public bool isGrounded;
@@ -40,9 +42,10 @@ public class Grisha : MonoBehaviour
         climbingDirection.y = 1;
         isRuning = true;
         baseGravityScale = rb.gravityScale;
+        StartCoroutine(StartWait());
     }
 
-    public void Jump()
+    public void Jump(float jumpForce)
     {
         if (isGrounded)
         {
@@ -68,7 +71,13 @@ public class Grisha : MonoBehaviour
         if (collision.gameObject.tag == "JumpTrigger")
         {
             Debug.Log("Jump");
-            Jump();
+            Jump(baseJumpForce);
+            Destroy(collision.gameObject);
+        }
+        else if (collision.gameObject.tag == "StrongJumpCoin")
+        {
+            Debug.Log("StrongJump");
+            Jump(strongJumpForce);
             Destroy(collision.gameObject);
         }
         else if (collision.gameObject.tag == "GravityReverseTrigger")
@@ -88,6 +97,12 @@ public class Grisha : MonoBehaviour
         else if (collision.gameObject.tag == "LevelEnd")
         {
             Debug.Log("LevelEnd");
+            collision.gameObject.GetComponent<LevelEnd>().LoadNextScene();
+        }
+        else if (collision.gameObject.tag == "KillTiles")
+        {
+            Debug.Log("Killed");
+            Destroy(gameObject);
         }
     }
 
@@ -142,5 +157,18 @@ public class Grisha : MonoBehaviour
         yield return new WaitForSeconds(waitTime);
         isRuning = true;
         Destroy(door);
+    }
+
+    private IEnumerator StartWait()
+    {
+        Debug.Log("StartWait");
+        isRuning = false;
+        yield return new WaitForSeconds(waitTime);
+        isRuning = true;
+    }
+
+    private void OnDestroy()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 }

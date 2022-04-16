@@ -10,6 +10,8 @@ TagManager:
   - ClimbingTiles
   - Door
   - LevelEnd
+  - KillTiles
+  - StrongJumpCoin
   layers:
   - Default
   - TransparentFX
