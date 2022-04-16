@@ -638,10 +638,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 0.05
   ClimbingSpeed: 0.05
-  jumpForce: 600
+  baseJumpForce: 200
+  strongJumpForce: 400
+  waitTime: 3
   isGrounded: 0
   isRuning: 0
   isClimbing: 0
+  baseGravityScale: 0
 --- !u!61 &4164801957594533825
 BoxCollider2D:
   m_ObjectHideFlags: 0
