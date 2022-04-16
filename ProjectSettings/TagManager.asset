@@ -8,6 +8,8 @@ TagManager:
   - JumpTrigger
   - GravityReverseTrigger
   - ClimbingTiles
+  - Door
+  - LevelEnd
   layers:
   - Default
   - TransparentFX

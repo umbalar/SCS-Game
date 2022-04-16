@@ -8,6 +8,7 @@ public class Grisha : MonoBehaviour
     [SerializeField] private float speed = 3f;
     [SerializeField] private float ClimbingSpeed = 3f;
     [SerializeField] private float jumpForce = 10f;
+    [SerializeField] private float waitTime = 3f;
     private Rigidbody2D rb;
     public bool isGrounded;
     public bool isRuning;
@@ -78,6 +79,16 @@ public class Grisha : MonoBehaviour
             baseGravityScale *= -1;
             Destroy(collision.gameObject);
         }
+        else if (collision.gameObject.tag == "Door")
+        {
+            Debug.Log("Door");
+            collision.gameObject.GetComponent<Door>().cameraRelocating = true;
+            StartCoroutine(Wait(collision.gameObject));
+        }
+        else if (collision.gameObject.tag == "LevelEnd")
+        {
+            Debug.Log("LevelEnd");
+        }
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -122,5 +133,14 @@ public class Grisha : MonoBehaviour
                 rb.gravityScale = baseGravityScale;
             }
         }
+    }
+
+    private IEnumerator Wait(GameObject door)
+    {
+        Debug.Log("Wait");
+        isRuning = false;
+        yield return new WaitForSeconds(waitTime);
+        isRuning = true;
+        Destroy(door);
     }
 }
