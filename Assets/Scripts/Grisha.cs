@@ -18,6 +18,7 @@ public class Grisha : MonoBehaviour
     private Vector2 climbingDirection;
     private Vector2 runDirection;
     public float baseGravityScale;
+    private Animator animator;
 
     private void Run()
     {
@@ -37,12 +38,15 @@ public class Grisha : MonoBehaviour
 
     void Start()
     {
+        animator = GetComponent<Animator>();
         rb = GetComponent<Rigidbody2D>();
         runDirection.x = 1;
         climbingDirection.y = 1;
         isRuning = true;
+        animator.SetBool("isRunnig", false);
         baseGravityScale = rb.gravityScale;
         StartCoroutine(StartWait());
+        
     }
 
     public void Jump(float jumpForce)
@@ -130,7 +134,9 @@ public class Grisha : MonoBehaviour
                 {
                     
                     isClimbing = true;
+                    animator.SetBool("isClimbing", true);
                     isRuning = false;
+                    animator.SetBool("isRunnig", false);
                     rb.gravityScale = 0f;
                 }
             }
@@ -144,7 +150,9 @@ public class Grisha : MonoBehaviour
             {
                 Debug.Log("Climbing off");
                 isClimbing = false;
+                animator.SetBool("isClimbing", false);
                 isRuning = true;
+                animator.SetBool("isRunnig", true);
                 rb.gravityScale = baseGravityScale;
             }
         }
@@ -154,8 +162,10 @@ public class Grisha : MonoBehaviour
     {
         Debug.Log("Wait");
         isRuning = false;
+        animator.SetBool("isRunnig", false);
         yield return new WaitForSeconds(waitTime);
         isRuning = true;
+        animator.SetBool("isRunnig", true);
         Destroy(door);
     }
 
@@ -163,8 +173,10 @@ public class Grisha : MonoBehaviour
     {
         Debug.Log("StartWait");
         isRuning = false;
+        animator.SetBool("isRunnig", false);
         yield return new WaitForSeconds(waitTime);
         isRuning = true;
+        animator.SetBool("isRunnig", true);
     }
 
     private void OnDestroy()
