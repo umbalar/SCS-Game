@@ -12,6 +12,8 @@ TagManager:
   - LevelEnd
   - KillTiles
   - StrongJumpCoin
+  - DefoultTiles
+  - Ramp
   layers:
   - Default
   - TransparentFX

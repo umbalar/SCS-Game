@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class GroundCheck : MonoBehaviour
 {
-    Grisha grisha;
+    private Grisha _grisha;
     private void Start()
     {
-        grisha = gameObject.GetComponentInParent<Grisha>();
+        _grisha = gameObject.GetComponentInParent<Grisha>();
         //Debug.Log(grisha.isGrounded);
     }
 
@@ -15,7 +15,11 @@ public class GroundCheck : MonoBehaviour
     {
         if (collision.gameObject.tag != "Player")
         {
-            grisha.isGrounded = true;
+            if (_grisha._isGrounded != true)
+            {
+                Debug.Log(true);
+            }
+            _grisha._isGrounded = true;
         }
     }
 
@@ -23,7 +27,8 @@ public class GroundCheck : MonoBehaviour
     {
         if (collision.gameObject.tag != "Player")
         {
-            grisha.isGrounded = false;
+            _grisha._isGrounded = false;
+            Debug.Log(false);
         }
     }
 }

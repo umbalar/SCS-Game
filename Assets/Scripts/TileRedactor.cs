@@ -6,32 +6,32 @@ using UnityEngine.EventSystems;
 
 public class TileRedactor : MonoBehaviour
 {
-    public TileBase tile1;
-    public TileBase tile2;
-    public TileBase tile3;
-    public TileBase tileToBuild;
-    [SerializeField] private GameObject tilemap;
-    private Tilemap tilemapComponent;
-    private Camera mainCamera;
+    public TileBase _tile1;
+    public TileBase _tile2;
+    public TileBase _tile3;
+    public TileBase _tileToBuild;
+    [SerializeField] private GameObject _tilemap;
+    private Tilemap _tilemapComponent;
+    private Camera _mainCamera;
 
     void Start()
     {
-        tilemapComponent = tilemap.GetComponent<Tilemap>();
-        mainCamera = Camera.main;
+        _tilemapComponent = _tilemap.GetComponent<Tilemap>();
+        _mainCamera = Camera.main;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetMouseButtonDown(0) && tileToBuild != null)
+        if (Input.GetMouseButtonDown(0) && _tileToBuild != null)
         {
-            Vector3 clickWorldPosition = mainCamera.ScreenToWorldPoint(Input.mousePosition);
-            Vector3Int clickCellPosition = tilemapComponent.WorldToCell(clickWorldPosition);
+            Vector3 clickWorldPosition = _mainCamera.ScreenToWorldPoint(Input.mousePosition);
+            Vector3Int clickCellPosition = _tilemapComponent.WorldToCell(clickWorldPosition);
             //Debug.Log(clickCellPosition);
-            if (!tilemapComponent.HasTile(clickCellPosition))
+            if (!_tilemapComponent.HasTile(clickCellPosition))
             {
-                tilemapComponent.SetTile(clickCellPosition, tileToBuild);
-                tileToBuild = null;
+                _tilemapComponent.SetTile(clickCellPosition, _tileToBuild);
+                _tileToBuild = null;
             }
             else
             {
@@ -54,14 +54,14 @@ public class TileRedactor : MonoBehaviour
     }
     public void PickTile1()
     {
-        tileToBuild = tile1;
+        _tileToBuild = _tile1;
     }
     public void PickTile2()
     {
-        tileToBuild = tile2;
+        _tileToBuild = _tile2;
     }
     public void PickTile3()
     {
-        tileToBuild = tile3;
+        _tileToBuild = _tile3;
     }
 }

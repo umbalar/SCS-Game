@@ -4,23 +4,23 @@ using UnityEngine;
 
 public class Door : MonoBehaviour
 {
-    new Camera camera;
-    public GameObject nextCameraLocation;
-    Vector3 cameraStartPosition;
-    public float cameraRelocateSpeed;
-    float cameraRelocatingProgress;
-    public bool cameraRelocating;
+    private Camera _camera;
+    public GameObject _nextCameraLocation;
+    private Vector3 _cameraStartPosition;
+    public float _cameraRelocateSpeed;
+    private float _cameraRelocatingProgress;
+    public bool _cameraRelocating;
     void Start()
     {
-        camera = Camera.main;
-        cameraStartPosition = camera.transform.position.normalized;
-        cameraRelocating = false;
+        _camera = Camera.main;
+        _cameraStartPosition = _camera.transform.position.normalized;
+        _cameraRelocating = false;
     }
 
     // Update is called once per frame
     void FixedUpdate()
     {
-        if (cameraRelocating)
+        if (_cameraRelocating)
         {
             RelocateCamera();
         }
@@ -29,9 +29,9 @@ public class Door : MonoBehaviour
 
     void RelocateCamera()
     {
-        camera.transform.position = Vector3.Lerp(cameraStartPosition, nextCameraLocation.transform.position, cameraRelocatingProgress);
-        cameraRelocatingProgress += cameraRelocateSpeed;
-        if (camera.transform.position == nextCameraLocation.transform.position)
+        _camera.transform.position = Vector3.Lerp(_cameraStartPosition, _nextCameraLocation.transform.position, _cameraRelocatingProgress);
+        _cameraRelocatingProgress += _cameraRelocateSpeed;
+        if (_camera.transform.position == _nextCameraLocation.transform.position)
         {
             //cameraRelocating = false;
         }

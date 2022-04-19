@@ -4,15 +4,15 @@ using UnityEngine;
 
 public class SceneReload : MonoBehaviour
 {
-    GameObject character;
+    private GameObject _character;
     void Start()
     {
-        character = GameObject.FindGameObjectWithTag("Player");
+        _character = GameObject.FindGameObjectWithTag("Player");
     }
 
     public void Reload()
     {
-        Destroy(character);
+        Destroy(_character);
     }
 
 }

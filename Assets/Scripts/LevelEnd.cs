@@ -5,10 +5,11 @@ using UnityEngine.SceneManagement;
 
 public class LevelEnd : MonoBehaviour
 {
-    [SerializeField] private string nextSceneName;
+    [SerializeField] private string _nextSceneName;
 
     public void LoadNextScene()
     {
-        SceneManager.LoadScene(nextSceneName);
+        GameObject.FindGameObjectWithTag("Player").GetComponent<Grisha>()._levelComplete = true;
+        SceneManager.LoadScene(_nextSceneName);
     }
 }
