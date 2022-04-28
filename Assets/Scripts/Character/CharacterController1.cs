@@ -13,7 +13,7 @@ public class CharacterController1 : MonoBehaviour
     [SerializeField] public float _fallGravityScale = 30f;
     public bool _levelComplete;
     private Rigidbody2D _rigidbody;
-    public bool _isGrounded;
+    //public bool _isGrounded;
     //public bool _isRunning;
     //public bool _isClimbing;
     private Vector2 _climbingDirection;
@@ -51,16 +51,13 @@ public class CharacterController1 : MonoBehaviour
 
     public void Jump(float jumpForce)
     {
-        if (_isGrounded)
+        if (_rigidbody.gravityScale > 0)
         {
-            if (_rigidbody.gravityScale > 0)
-            {
-                _rigidbody.AddForce(Vector2.up * jumpForce);
-            }
-            else
-            {
-                _rigidbody.AddForce(Vector2.down * jumpForce);
-            }
+            _rigidbody.AddForce(Vector2.up * jumpForce);
+        }
+        else
+        {
+            _rigidbody.AddForce(Vector2.down * jumpForce);
         }
     } 
 

@@ -4,31 +4,31 @@ using UnityEngine;
 
 public class GroundCheck : MonoBehaviour
 {
-    private CharacterController1 _grisha;
-    private void Start()
-    {
-        _grisha = gameObject.GetComponentInParent<CharacterController1>();
-        //Debug.Log(grisha.isGrounded);
-    }
+    //private CharacterController1 _grisha;
+    //private void Start()
+    //{
+    //    _grisha = gameObject.GetComponentInParent<CharacterController1>();
+    //    //Debug.Log(grisha.isGrounded);
+    //}
 
-    private void OnTriggerStay2D(Collider2D collision)
-    {
-        if (collision.gameObject.tag != "Player")
-        {
-            if (_grisha._isGrounded != true)
-            {
-                //Debug.Log(true);
-            }
-            _grisha._isGrounded = true;
-        }
-    }
+    //private void OnTriggerStay2D(Collider2D collision)
+    //{
+    //    if (collision.gameObject.tag != "Player")
+    //    {
+    //        if (_grisha._isGrounded != true)
+    //        {
+    //            //Debug.Log(true);
+    //        }
+    //        _grisha._isGrounded = true;
+    //    }
+    //}
 
-    private void OnTriggerExit2D(Collider2D collision)
-    {
-        if (collision.gameObject.tag != "Player")
-        {
-            _grisha._isGrounded = false;
-            //Debug.Log(false);
-        }
-    }
+    //private void OnTriggerExit2D(Collider2D collision)
+    //{
+    //    if (collision.gameObject.tag != "Player")
+    //    {
+    //        _grisha._isGrounded = false;
+    //        //Debug.Log(false);
+    //    }
+    //}
 }

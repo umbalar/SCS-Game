@@ -33,6 +33,25 @@ public class Builder : MonoBehaviour
     //}
     void Update()
     {
+        //if (Input.GetMouseButtonDown(0))
+        //{
+        //    Vector3 clickWorldPosition = _mainCamera.ScreenToWorldPoint(Input.mousePosition);
+        //    Vector3Int clickCellPosition = _tilemaps[0].WorldToCell(clickWorldPosition);
+        //    Vector2 vector2 = _tilemaps[0].CellToWorld(clickCellPosition);
+        //    Ray2D ray2D = new Ray2D(vector2, Vector2.down);
+        //    Debug.DrawRay(vector2, Vector2.down, Color.red, 10f);
+        //    Debug.Log(vector2);
+        //    Debug.Log(vector2 + Vector2.down);
+        //    if (Physics2D.Raycast(vector2, Vector2.down, 1f, 8))
+        //    {
+        //        Debug.Log("DownHit");
+        //    }
+        //    else
+        //    {
+        //        Debug.Log("NotDownHit");
+        //    }
+
+        //}
         if (Input.GetKeyDown(KeyCode.Mouse1) && _activeButtonSqcript != null)
         {
             Destroy(_activeButtonSqcript._buildMarker);
