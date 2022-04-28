@@ -231,6 +231,14 @@ Start importing Assets/Art/BlackTile.png using Guid(53853c468f22a044c878b9d31e87
   Import took 0.035668 seconds .
 
 ========================================================================
+Received Import Request.
+  Time since last request: 0.100896 seconds.
+  path: Assets/Prefabs/Buttons/SelectBaseJumpTrigger.prefab
+  artifactKey: Guid(79acba105dd37724a820a821b3251286) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Buttons/SelectBaseJumpTrigger.prefab using Guid(79acba105dd37724a820a821b3251286) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4cf714a890903d90a32776b32ddc019e') in 0.012678 seconds
+  Import took 0.018121 seconds .
+
+========================================================================
 Received Prepare
 Registering precompiled user dll's ...
 Registered in 0.001760 seconds.
