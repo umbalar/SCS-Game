@@ -9,7 +9,7 @@ public class LevelEnd : MonoBehaviour
 
     public void LoadNextScene()
     {
-        GameObject.FindGameObjectWithTag("Player").GetComponent<CharacterController>()._levelComplete = true;
+        GameObject.FindGameObjectWithTag("Player").GetComponent<CharacterController1>()._levelComplete = true;
         SceneManager.LoadScene(_nextSceneName);
     }
 }

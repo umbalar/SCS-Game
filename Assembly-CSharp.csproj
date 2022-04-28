@@ -57,6 +57,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Scripts\Building\BuildingMenuFiller.cs" />
+    <Compile Include="Assets\Scripts\Building\BuildingMenuMeneger.cs" />
     <Compile Include="Assets\Scripts\Building\BuildChecker.cs" />
     <Compile Include="Assets\Scripts\SceneReload.cs" />
     <Compile Include="Assets\Scripts\Building\BuildMarker.cs" />
@@ -66,10 +67,9 @@
     <Compile Include="Assets\Scripts\Building\BuildObjectSelecter.cs" />
     <Compile Include="Assets\Scripts\Character\GroundCheck.cs" />
     <Compile Include="Assets\Scripts\Triggers\Door.cs" />
-    <Compile Include="Assets\Scripts\Character\CharacterController.cs" />
+    <Compile Include="Assets\Scripts\Character\CharacterController1.cs" />
     <Compile Include="Assets\Scripts\Triggers\TriggersStartPosition.cs" />
     <Compile Include="Assets\Scripts\MouseOverGUI.cs" />
-    <Compile Include="Assets\Scripts\Building\BuildingMenuMeneger.cs" />
   </ItemGroup>
   <ItemGroup>
      <None Include="Assets\BayatGames\Free Platform Game Assets\Readme.txt" />

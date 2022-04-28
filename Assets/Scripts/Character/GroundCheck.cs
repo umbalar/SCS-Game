@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class GroundCheck : MonoBehaviour
 {
-    private CharacterController _grisha;
+    private CharacterController1 _grisha;
     private void Start()
     {
-        _grisha = gameObject.GetComponentInParent<CharacterController>();
+        _grisha = gameObject.GetComponentInParent<CharacterController1>();
         //Debug.Log(grisha.isGrounded);
     }
 
