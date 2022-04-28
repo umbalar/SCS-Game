@@ -13,7 +13,9 @@ TagManager:
   - KillTiles
   - StrongJumpCoin
   - DefoultTiles
-  - Ramp
+  - BuildingMenu
+  - Grid
+  - Triggers
   layers:
   - Default
   - TransparentFX
