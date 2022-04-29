@@ -59,14 +59,24 @@ public class CharacterController1 : MonoBehaviour
         {
             _rigidbody.AddForce(Vector2.down * jumpForce);
         }
-    } 
+    }
 
-    void FixedUpdate()
+    private void Update()
     {
         if (Input.GetKeyDown(KeyCode.R))
         {
             Destroy(gameObject);
         }
+        if (state == charackterStates.idle && Input.GetKeyDown(KeyCode.Space))
+        {
+            state = charackterStates.running;
+            _animator.SetBool("isRunnig", true);
+        }
+    }
+
+    void FixedUpdate()
+    {
+        
         switch (state)
         {
             case charackterStates.running:
@@ -76,11 +86,6 @@ public class CharacterController1 : MonoBehaviour
                 Climbing();
                 break;
             case charackterStates.idle:
-                if (Input.GetKeyDown(KeyCode.Space))
-                {
-                    state = charackterStates.running;
-                    _animator.SetBool("isRunnig", true);
-                }
                 break;
             default:
                 break;
