@@ -52,7 +52,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _nextCameraLocation: {fileID: 0}
-  _cameraRelocateSpeed: 0
+  _cameraRelocateSpeed: 0.02
   _cameraRelocating: 0
 --- !u!222 &3961074959597190182
 CanvasRenderer:

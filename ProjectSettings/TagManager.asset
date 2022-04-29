@@ -16,6 +16,8 @@ TagManager:
   - BuildingMenu
   - Grid
   - Triggers
+  - Ramp
+  - SceneController
   layers:
   - Default
   - TransparentFX

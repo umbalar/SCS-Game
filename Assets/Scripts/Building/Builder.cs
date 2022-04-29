@@ -10,6 +10,8 @@ public class Builder : MonoBehaviour
     private Camera _mainCamera;
     private List<Tilemap> _tilemaps;
     [SerializeField] private TileBase _tileBase;
+    [SerializeField] private TileBase _climbingTile;
+    [SerializeField] private TileBase _climbingTileReverse;
     void Start()
     {
         _mainCamera = Camera.main;
@@ -38,12 +40,11 @@ public class Builder : MonoBehaviour
         //    Vector3 clickWorldPosition = _mainCamera.ScreenToWorldPoint(Input.mousePosition);
         //    Vector3Int clickCellPosition = _tilemaps[0].WorldToCell(clickWorldPosition);
         //    Vector2 vector2 = _tilemaps[0].CellToWorld(clickCellPosition);
-        //    Ray2D ray2D = new Ray2D(vector2, Vector2.down);
-        //    Debug.DrawRay(vector2, Vector2.down, Color.red, 10f);
-        //    Debug.Log(vector2);
-        //    Debug.Log(vector2 + Vector2.down);
-        //    if (Physics2D.Raycast(vector2, Vector2.down, 1f, 8))
+        //    Vector2 offset = new Vector2(0.5f, 0.5f);
+        //    RaycastHit2D raycastHit2D = Physics2D.Raycast(vector2 + offset, Vector2.down, 1f);
+        //    if (raycastHit2D)
         //    {
+        //        Debug.Log(raycastHit2D.collider.gameObject.GetComponent<Tilemap>());
         //        Debug.Log("DownHit");
         //    }
         //    else
@@ -70,6 +71,25 @@ public class Builder : MonoBehaviour
                 if (_activeButtonSqcript._objectToBuild is TileBase)
                 {
                     TileBase tileToBuild = (TileBase)_activeButtonSqcript._objectToBuild;
+                    if (tileToBuild == _climbingTile)
+                    {
+                        Vector2 vector2 = _tilemaps[0].CellToWorld(clickCellPosition);
+                        Vector2 offset = new Vector2(0.5f, 0.5f);
+                        RaycastHit2D raycastHit2D = Physics2D.Raycast(vector2 + offset, Vector2.down, 1f);
+                        if (raycastHit2D && raycastHit2D.collider.gameObject.layer == 8)
+                        {
+                            //tileToBuild = _climbingTileReverse;
+                        }
+                        else
+                        {
+                            raycastHit2D = Physics2D.Raycast(vector2 + offset, Vector2.up, 1f);
+                            if (raycastHit2D && raycastHit2D.collider.gameObject.layer == 8)
+                            {
+                                tileToBuild = _climbingTileReverse;
+                            }
+                            
+                        }
+                    }
                     if (tileToBuild.Equals(_tileBase))
                     {
                         _tilemaps[0].SetTile(clickCellPosition, tileToBuild);
@@ -90,7 +110,23 @@ public class Builder : MonoBehaviour
                 else
                 {
                     GameObject triggerToBuild = (GameObject)_activeButtonSqcript._objectToBuild;
-                    Instantiate(triggerToBuild, _tilemaps[0].GetCellCenterWorld(clickCellPosition), new Quaternion() , GameObject.FindGameObjectWithTag("Triggers").transform);
+                    triggerToBuild =  Instantiate(triggerToBuild, _tilemaps[0].GetCellCenterWorld(clickCellPosition), new Quaternion() , GameObject.FindGameObjectWithTag("Triggers").transform);
+                    Vector2 vector2 = _tilemaps[0].CellToWorld(clickCellPosition);
+                    Vector2 offset = new Vector2(0.5f, 0.5f);
+                    RaycastHit2D raycastHit2D = Physics2D.Raycast(vector2 + offset, Vector2.down, 1f);
+                    if (raycastHit2D && raycastHit2D.collider.gameObject.layer == 8)
+                    {
+
+                    }
+                    else
+                    {
+                        raycastHit2D = Physics2D.Raycast(vector2 + offset, Vector2.up, 1f);
+                        if (raycastHit2D && raycastHit2D.collider.gameObject.layer == 8)
+                        {
+                            triggerToBuild.transform.Rotate(transform.rotation.x + 180, 0, 0, Space.Self);
+                        }
+
+                    }
                     _activeButtonSqcript._counter--;
                     _activeButtonSqcript.gameObject.GetComponentInChildren<Text>().text = _activeButtonSqcript._counter.ToString();
                     if (_activeButtonSqcript._counter <= 0)
