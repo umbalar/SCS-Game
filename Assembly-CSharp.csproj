@@ -56,6 +56,8 @@
     <Analyzer Include="C:\Program Files (x86)\Microsoft Visual Studio Tools for Unity\16.0\Analyzers\Microsoft.Unity.Analyzers.dll" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Scripts\Menu\MenuManager.cs" />
+    <Compile Include="Assets\Scripts\Menu\ExitToMenu.cs" />
     <Compile Include="Assets\Scripts\Building\BuildingMenuFiller.cs" />
     <Compile Include="Assets\Scripts\Building\BuildingMenuMeneger.cs" />
     <Compile Include="Assets\Scripts\Building\BuildChecker.cs" />
@@ -67,15 +69,12 @@
     <Compile Include="Assets\Scripts\Building\BuildObjectSelecter.cs" />
     <Compile Include="Assets\Scripts\Character\GroundCheck.cs" />
     <Compile Include="Assets\Scripts\Triggers\Door.cs" />
+    <Compile Include="Assets\Scripts\Menu\SceneController.cs" />
     <Compile Include="Assets\Scripts\Character\CharacterController1.cs" />
     <Compile Include="Assets\Scripts\Triggers\TriggersStartPosition.cs" />
     <Compile Include="Assets\Scripts\MouseOverGUI.cs" />
-    <Compile Include="Assets\Scripts\Menu\MenuManager.cs" />
-    <Compile Include="Assets\Scripts\Menu\ExitToMenu.cs" />
-    <Compile Include="Assets\Scripts\Menu\SceneController.cs" />
   </ItemGroup>
   <ItemGroup>
-     <None Include="Assets\BayatGames\Free Platform Game Assets\Readme.txt" />
     <Reference Include="UnityEngine">
       <HintPath>C:\Program Files\Unity\Hub\Editor\2019.4.11f1\Editor\Data\Managed\UnityEngine\UnityEngine.dll</HintPath>
     </Reference>
