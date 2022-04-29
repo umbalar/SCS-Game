@@ -607,7 +607,7 @@ TilemapRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 2
   m_ChunkSize: {x: 32, y: 32, z: 32}
   m_ChunkCullingBounds: {x: 0, y: 0, z: 0}
   m_MaxChunkCount: 16
@@ -2339,7 +2339,7 @@ TilemapRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 2
   m_ChunkSize: {x: 32, y: 32, z: 32}
   m_ChunkCullingBounds: {x: 0, y: 0, z: 0}
   m_MaxChunkCount: 16
@@ -3184,8 +3184,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _activeButtonSqcript: {fileID: 0}
   _tileBase: {fileID: 11400000, guid: b6e94f5898f03364b8c151191750d34d, type: 2}
-  _climbingTile: {fileID: 0}
-  _climbingTileReverse: {fileID: 0}
+  _climbingTile: {fileID: 11400000, guid: c18146994007a2c49bbdfeb5f50f298c, type: 2}
+  _climbingTileReverse: {fileID: 11400000, guid: b1f02b969f945db4b96647fbba6c3e7c, type: 2}
 --- !u!114 &1787825219
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -211,7 +211,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2567874462169725040, guid: 64b3c36fb8aa400429d59837d0d510f2, type: 3}
       propertyPath: _nextSceneName
-      value: Level 0
+      value: Menu
       objectReference: {fileID: 0}
     - target: {fileID: 2567874462169725042, guid: 64b3c36fb8aa400429d59837d0d510f2, type: 3}
       propertyPath: m_RootOrder
@@ -935,7 +935,7 @@ TilemapRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 2
   m_ChunkSize: {x: 32, y: 32, z: 32}
   m_ChunkCullingBounds: {x: 0, y: 0, z: 0}
   m_MaxChunkCount: 16
@@ -5601,7 +5601,7 @@ TilemapRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 2
   m_ChunkSize: {x: 32, y: 32, z: 32}
   m_ChunkCullingBounds: {x: 0, y: 0, z: 0}
   m_MaxChunkCount: 16
@@ -6646,7 +6646,7 @@ MonoBehaviour:
   - {fileID: 6909959217020513439, guid: 79acba105dd37724a820a821b3251286, type: 3}
   - {fileID: 593999846044490667, guid: e38e2ac4e590fd341ac5d419ab7037e3, type: 3}
   - {fileID: 9003643131678882929, guid: 05d4bccf0de045c44ac1e3b89add6590, type: 3}
-  _counters: 0500000005000000050000000500000005000000
+  _counters: 0000000000000000000000000000000000000000
 --- !u!1 &1787825215
 GameObject:
   m_ObjectHideFlags: 0
@@ -6713,8 +6713,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _activeButtonSqcript: {fileID: 0}
   _tileBase: {fileID: 11400000, guid: b6e94f5898f03364b8c151191750d34d, type: 2}
-  _climbingTile: {fileID: 0}
-  _climbingTileReverse: {fileID: 0}
+  _climbingTile: {fileID: 11400000, guid: c18146994007a2c49bbdfeb5f50f298c, type: 2}
+  _climbingTileReverse: {fileID: 11400000, guid: b1f02b969f945db4b96647fbba6c3e7c, type: 2}
 --- !u!114 &1787825219
 MonoBehaviour:
   m_ObjectHideFlags: 0

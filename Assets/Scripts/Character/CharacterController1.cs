@@ -13,6 +13,7 @@ public class CharacterController1 : MonoBehaviour
     [SerializeField] public float _fallGravityScale = 30f;
     public bool _levelComplete;
     private Rigidbody2D _rigidbody;
+    private bool _onClimbingTiles;
     //public bool _isGrounded;
     //public bool _isRunning;
     //public bool _isClimbing;
@@ -141,6 +142,7 @@ public class CharacterController1 : MonoBehaviour
         //Debug.Log(_normal);
         if (collision.gameObject.tag == "ClimbingTiles")
         {
+            _onClimbingTiles = true;
             if (state != charackterStates.climbing)
             {
                 Debug.Log(collision.gameObject.name);
@@ -182,6 +184,7 @@ public class CharacterController1 : MonoBehaviour
     }
     private void OnCollisionExit2D(Collision2D collision)
     {
+        _onClimbingTiles = false;
         if (collision.gameObject.tag == "ClimbingTiles")
         {
             if (state == charackterStates.climbing)
