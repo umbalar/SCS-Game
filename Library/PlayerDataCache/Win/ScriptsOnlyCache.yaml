@@ -22,7 +22,6 @@ ScriptsOnlyBuild:
     - UnityEngine.U2D.Animation.SpriteSkin
     Unity.2D.IK.Editor.dll:
     - UnityEditor.U2D.IK.IKEditorManager
-    - UnityEditor.U2D.IK.IKGizmos
     Unity.2D.IK.Runtime.dll:
     - UnityEditor.U2D.IK.IKEditorManagerHelper
     Unity.2D.Tilemap.Editor.dll:
@@ -32,7 +31,6 @@ ScriptsOnlyBuild:
     - UnityEditor.Tilemaps.GridPaintPaletteWindow
     - UnityEditor.Tilemaps.GridPaintingState
     - UnityEditor.Tilemaps.GridPaletteBrushes
-    - UnityEditor.Tilemaps.GridPalettes
     - UnityEditor.Tilemaps.PaintableSceneViewGrid
     - UnityEditor.Tilemaps.SceneViewGridManager
     - UnityEditor.Tilemaps.SceneViewOpenTilePaletteHelper
@@ -69,8 +67,6 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 50
       Script: {instanceID: 0}
-    - Class: 58
-      Script: {instanceID: 0}
     - Class: 61
       Script: {instanceID: 0}
     - Class: 66
@@ -104,8 +100,6 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 2062}
     - Class: 114
-      Script: {instanceID: 2454}
-    - Class: 114
       Script: {instanceID: 2460}
     - Class: 114
       Script: {instanceID: 2606}
@@ -119,8 +113,6 @@ ScriptsOnlyBuild:
       Script: {instanceID: 3006}
     - Class: 114
       Script: {instanceID: 3094}
-    - Class: 114
-      Script: {instanceID: 3780}
     - Class: 114
       Script: {instanceID: 3802}
     - Class: 114
