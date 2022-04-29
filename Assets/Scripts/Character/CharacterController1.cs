@@ -43,7 +43,7 @@ public class CharacterController1 : MonoBehaviour
         //_isRuning = true;
         //_animator.SetBool("isRunnig", false);
         _baseGravityScale = _rigidbody.gravityScale;
-        StartCoroutine(StartWait());
+        //StartCoroutine(StartWait());
         _levelComplete = false;
         state = charackterStates.idle;
 
@@ -63,6 +63,10 @@ public class CharacterController1 : MonoBehaviour
 
     void FixedUpdate()
     {
+        if (Input.GetKeyDown(KeyCode.R))
+        {
+            Destroy(gameObject);
+        }
         switch (state)
         {
             case charackterStates.running:
@@ -72,6 +76,11 @@ public class CharacterController1 : MonoBehaviour
                 Climbing();
                 break;
             case charackterStates.idle:
+                if (Input.GetKeyDown(KeyCode.Space))
+                {
+                    state = charackterStates.running;
+                    _animator.SetBool("isRunnig", true);
+                }
                 break;
             default:
                 break;
@@ -105,7 +114,8 @@ public class CharacterController1 : MonoBehaviour
             Debug.Log("Door");
             _animator.SetBool("isRunnig", false);
             collision.gameObject.GetComponent<Door>()._cameraRelocating = true;
-            StartCoroutine(Wait(collision.gameObject));
+            //StartCoroutine(Wait(collision.gameObject));
+            state = charackterStates.idle;
         }
         else if (collision.gameObject.tag == "LevelEnd")
         {
